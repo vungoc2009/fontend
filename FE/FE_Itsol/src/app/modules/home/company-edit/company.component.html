@@ -1,0 +1,225 @@
+<div class="container">
+  <form [formGroup]="formUpdate">
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="name">Tên công ty</label>
+        <input
+          type="name"
+          formControlName="name"
+          class="form-control"
+          id="name"
+          placeholder=""
+          [ngModel]="company.name"
+        />
+        <div *ngIf="formUpdate.controls.name.invalid && (formUpdate.controls.name.dirty || formUpdate.controls.name.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.name.errors?.['required']">
+            Không được để trống
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-5">
+        <label for="hotline">HotLine</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="hotline"
+          id="hotline"
+          placeholder="+84"
+          [(ngModel)]="company.hotline"
+        />
+        <div *ngIf="formUpdate.controls.hotline.invalid && (formUpdate.controls.hotline.dirty || formUpdate.controls.hotline.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.hotline.errors?.['required']">
+            Không được để trống.
+          </div>
+          <div *ngIf="formUpdate.controls.hotline.errors?.['minlength']">
+            Số điện thoại phải 10 số.
+          </div>
+          <div *ngIf="formUpdate.controls.hotline.errors?.['maxlength']">
+            Số điện thoại phải 10 số.
+          </div>
+          <div *ngIf="formUpdate.controls.hotLine.errors?.['pattern']">
+            Số điện thoại phải là số.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          placeholder="Email"
+          [(ngModel)]="company.email"
+        />
+        <div *ngIf="formUpdate.controls.email.invalid && (formUpdate.controls.email.dirty || formUpdate.controls.email.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.email.errors?.['required']">
+            Không được để trống
+          </div>
+          <div *ngIf="formUpdate.controls.email.errors?.['email']">
+            Email chưa đúng định dạng
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-5">
+        <label for="dateIncorporation">Ngày thành lập</label>
+        <input
+          type="date"
+          class="form-control"
+          id="dateIncorporation"
+          formControlName="date_incoporation"
+          placeholder=""
+          [(ngModel)]="company.date_incoporation"
+        />
+        <div *ngIf="formUpdate.controls.date_incoporation.invalid && (formUpdate.controls.date_incoporation.dirty || formUpdate.controls.date_incoporation.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.date_incoporation.errors?.['required']">
+            Không được để trống
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="taxCode">Mã số thuế</label>
+        <input
+          type="taxCode"
+          formControlName="tax_code"
+          class="form-control"
+          id="taxCode"
+          placeholder=""
+          [(ngModel)]="company.tax_code"
+
+        />
+        <div *ngIf="formUpdate.controls.tax_code.invalid && (formUpdate.controls.tax_code.dirty || formUpdate.controls.tax_code.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.tax_code.errors?.['required']">
+            Không được để trống.
+          </div>
+          <div *ngIf="formUpdate.controls.tax_code.errors?.['pattern']">
+            Mã số thuế phải là số.
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-5">
+        <label for="taxDate">Ngày cấp mã số thuế</label>
+        <input
+          type="date"
+          formControlName="tax_date"
+          class="form-control"
+          id="taxDate"
+          placeholder=""
+          [ngModel]="company.tax_date"
+
+        />
+        <div *ngIf="formUpdate.controls.tax_date.invalid && (formUpdate.controls.tax_date.dirty || formUpdate.controls.tax_date.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.tax_date.errors?.['required']">
+            Không được để trống
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="taxPlace">Nơi cấp mã số thuế</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="tax_place"
+          id="taxPlace"
+          placeholder="Hà Nội,Hồ Chí Minh"
+          [(ngModel)]="company.tax_place"
+        />
+        <div *ngIf="formUpdate.controls.tax_place.invalid && (formUpdate.controls.tax_place.dirty || formUpdate.controls.tax_place.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.tax_place.errors?.['required']">
+            Không được để trống
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-5">
+        <label for="headOffice">Trụ sở chính</label>
+        <input
+          type="text"
+          formControlName="head_office"
+          class="form-control"
+          id="headOffice"
+          placeholder=""
+          [(ngModel)]="company.head_office"
+        />
+        <div *ngIf="formUpdate.controls.head_office.invalid && (formUpdate.controls.head_office.dirty || formUpdate.controls.head_office.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.head_office.errors?.['required']">
+            Không được để trống
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="numberStaff">Số lượng nhân viên</label>
+        <input
+          type="text"
+          formControlName="number_staff"
+          class="form-control"
+          id="numberStaff"
+          placeholder=""
+          [(ngModel)]="company.number_staff"
+        />
+        <div *ngIf="formUpdate.controls.number_staff.invalid && (formUpdate.controls.number_staff.dirty || formUpdate.controls.number_staff.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.number_staff.errors?.['required']">
+            Không được để trống.
+          </div>
+          <div *ngIf="formUpdate.controls.number_staff.errors?.['pattern']">
+            <span>Số lượng nhân viên phải là số.</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-5">
+        <label for="linkWeb">Trang web</label>
+        <input
+          type="text"
+          class="form-control"
+          id="linkWeb"
+          formControlName="link_web"
+          placeholder=""
+          [(ngModel)]="company.link_web"
+        />
+        <div *ngIf="formUpdate.controls.link_web.invalid && (formUpdate.controls.link_web.dirty || formUpdate.controls.link_web.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.link_web.errors?.['required']">
+            Không được để trống
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="description">Mô tả công ty</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          formControlName="description"
+          placeholder=""
+          [(ngModel)]="company.description"
+        />
+        <div *ngIf="formUpdate.controls.description.invalid && (formUpdate.controls.description.dirty || formUpdate.controls.description.touched)" class = "error">
+          <div *ngIf="formUpdate.controls.description.errors?.['required']">
+            Không được để trống
+          </div>
+        </div>
+      </div>
+       <div class="form-group col-lg-2" style="display:flex">
+        <label  style="color: #212529">Avatar</label>
+         <img   [src]="dbImage" alt="Avatar"
+               style="width:82px; border-radius:50%">
+         <input type="file"  accept="image/*" class="mt-5 custom-file-input" style="color: gray;" id="importFile" (change)="onSelect($event.target.files)">
+         <label  #labelImport for="importFile" style="color: gray;"><i class="fas fa-image"></i>Đổi avatar</label>
+         <input type="hidden" name="fileHidden" formControlName="avatar"/>
+       </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formUpdate.invalid" (click)="update()">
+      Chỉnh sửa
+    </button>
+  </form>
+
+</div>

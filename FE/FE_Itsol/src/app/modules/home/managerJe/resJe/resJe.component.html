@@ -1,0 +1,103 @@
+<form [formGroup]="FormRegis">
+  <div class="flex">
+    <div class="form-group">
+      <label for="formGroupExampleInput">User Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" formControlName="userName">
+      <div *ngIf="FormRegis.controls.userName.invalid && FormRegis.controls.userName.touched ">
+        <div *ngIf="FormRegis.controls.userName.errors.required">
+          <small style="color: red;">không được để User Name</small>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="FormRegis.controls.userName.errors?.minlength && FormRegis.controls.userName.touched">User Name từ 5 đến 20 kí tự</span>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="FormRegis.controls.userName.errors?.maxlength && FormRegis.controls.userName.touched">User Name từ 5 đến 20 kí tự</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" style="margin-left: 10%;">
+      <label for="formGroupExampleInput2">Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="name">
+      <div *ngIf="FormRegis.controls.name.invalid && FormRegis.controls.name.touched ">
+        <div *ngIf="FormRegis.controls.name.errors.required">
+          <small style="color: red;">không được để User Name</small>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="FormRegis.controls.name.errors?.minlength && FormRegis.controls.name.touched">Name từ 5 đến 20 kí tự</span>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="FormRegis.controls.name.errors?.maxlength && FormRegis.controls.name.touched">Name từ 5 đến 20 kí tự</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flex">
+    <div class="form-group">
+      <label for="formGroupExampleInput2">phoneNumber</label>
+      <input type="text" class="form-control" id="formGroupExampleInput3" formControlName="phoneNumber">
+      <div *ngIf="FormRegis.controls.phoneNumber.invalid && FormRegis.controls.phoneNumber.touched ">
+        <div *ngIf="FormRegis.controls.phoneNumber.errors.required">
+          <small style="color: red;">không được để trống số điện thoại</small>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="FormRegis.controls.phoneNumber.errors?.pattern && FormRegis.controls.phoneNumber.touched">Định dạng số điện thoại không hợp lệ</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" style="margin-left: 10%;">
+      <label for="formGroupExampleInput2">homeTown</label>
+      <input type="text" class="form-control" id="formGroupExampleInput4" formControlName="homeTown">
+      <div *ngIf="FormRegis.controls.homeTown.errors && FormRegis.controls.homeTown.touched ">
+        <small style="color: red;">không được để trống quê quán</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex" >
+    <div class="form-group" style="width: 72%">
+      <label for="formGroupExampleInput2">gender</label>
+      <select formControlName="gender" class="select form-control" (change)="changeGender($event)">
+        <option value="Nam">Nam</option>
+        <option value="Nữ">Nữ</option>
+      </select>
+
+    </div>
+    <div class="form-group" style="margin-left: 10%;">
+    <label for="formGroupExampleInput2">birthDay</label>
+    <p-calendar [(ngModel)]="birthDay" [maxDate]="currentDate" [placeholder]="birthDay" [showIcon]="true" inputId="time" formControlName="birthDay"></p-calendar>
+    </div>
+  </div>
+  <div class="flex" >
+    <div class="form-group" >
+      <label for="formGroupExampleInput2">Email</label>
+      <input type="text" class="form-control" id="formGroupExampleInput7" formControlName="email">
+      <div *ngIf="FormRegis.controls.email.invalid && FormRegis.controls.email.touched ">
+        <div *ngIf="FormRegis.controls.email.errors.required">
+          <small style="color: red;">không được để trống email</small>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="FormRegis.controls.email.errors?.email && FormRegis.controls.email.touched">Sai định dạng email</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" style="margin-left: 10%;">
+      <label for="formGroupExampleInput2">Password</label>
+      <input type="text" class="form-control" id="formGroupExampleInput8" formControlName="password">
+      <div *ngIf=" FormRegis.controls.password.invalid && FormRegis.controls.password.touched ">
+        <div *ngIf="f.password.errors.required ">
+          <small style="color: red;">không được để trống Mật khẩu</small>
+        </div>
+        <div>
+          <span  style="color: red;" class="error" *ngIf="FormRegis.controls.password.errors?.pattern && FormRegis.controls.password.dirty">Mật khẩu phải chứa cả chữ, số và ký tự đặc biệt , phải từ 8 đến 16 kí tự <br> </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class=".d-flex">
+  <button [disabled]="FormRegis.invalid" (click)="onSubmit()" type="button" class="btn btn-primary" style="margin-left: 25%;">Created</button>
+  <button (click)="close()" type="button" class="btn btn-danger ml-5"  >Đóng</button>
+</div>

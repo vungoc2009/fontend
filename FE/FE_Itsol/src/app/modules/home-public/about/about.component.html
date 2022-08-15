@@ -1,0 +1,200 @@
+<section>
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+    <div class="container" style="position:relative">
+
+      <!-- Image Logo -->
+      <a class="navbar-brand logo-image" href="../../../../index.html"><img style="width:60px" src="../../../../assets/images/itsol.png" alt="alternative"></a>
+
+      <!-- Text Logo - Use this if you don't have a graphic logo -->
+      <!-- <a class="navbar-brand logo-text" href="index.html">Elma</a> -->
+
+      <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div style="margin-left:936px" class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ms-auto navbar-nav-scroll">
+          <li class="nav-item">
+            <a class="nav-link" href="/public/itsol_recruitment">Trang chủ</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/public/aboutus">Liên hệ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="auth">Đăng nhập</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup">Đăng ký</a>
+          </li>
+        </ul>
+
+      </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+  </nav> <!-- end of navbar -->
+  <!-- end of navigation -->
+
+
+  <!-- Header -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="row">
+
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+  </header> <!-- end of header -->
+  <!-- end of header -->
+
+
+
+
+  <div id="about" class="counter cards-1 bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class = "col-6"><img  [src]="dbImage" alt="Avatar"
+                                   style="width: 100%;">
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="col4">
+          <h1>Who we are?</h1>
+          <p>{{company.description}}</p>
+          <p>Số thành viên: {{company.number_staff}}</p>
+          <p>Trụ sở chính: {{company.head_office}}</p>
+          <p>Contact:</p>
+          <p>Email: {{company.email}}</p>
+          <p>Phone: {{company.hotline}}</p>
+        </div>
+
+      </div>
+
+<!--      <div class="row">-->
+<!--        <div class="col-lg-12">-->
+<!--          <h2 style="color:#313e5b ; font-family: 'Lato', sans-serif;" class="h2-heading">Who we are ?</h2>-->
+<!--          <hr class="hr-heading">-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--      </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--      <div class="row">-->
+<!--        <div class="col-xl-9" >-->
+<!--          {{company.name}}-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--        <img  [src]="dbImage" alt="Avatar"-->
+<!--              style="width:90px; border-radius: 50%;">-->
+<!--      </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--      <div class="row">-->
+<!--        <div class="col-xl-9" >-->
+<!--          {{company.email}}-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--        <div class="col-xl-3">-->
+<!--          {{company.hotline}}-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--      </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--      <div class="row">-->
+<!--        <div class="col-xl-9" >-->
+<!--          {{company.date_incoporation}}-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--        <div class="col-xl-3">-->
+<!--          {{company.tax_code}}-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--      </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--      <div class="row">-->
+<!--        <div class="col-xl-9" >-->
+<!--          {{company.tax_date}}-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--        <div class="col-xl-3">-->
+<!--          {{company.tax_place}}-->
+<!--        </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--      </div>-->
+<!--        <div class="row">-->
+<!--          <div class="col-xl-9" >-->
+<!--            {{company.head_office}}-->
+<!--          </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--          <div class="col-xl-3">-->
+<!--            {{company.number_staff}}-->
+<!--          </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--      </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--        <div class="row">-->
+<!--          <div class="col-xl-9" >-->
+<!--            {{company.link_web}}-->
+<!--          </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--          <div class="col-xl-3">-->
+
+<!--          </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--        </div>-->
+
+
+    </div> <!-- end of container -->
+  </div> <!-- end of counter -->
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="footer-col first">
+            <h6>About Elma</h6>
+            <p class="p-small">He oppose at thrown desire of no. Announcing impression unaffected day his are unreserved indulgence. Him hard find read are you</p>
+          </div> <!-- end of footer-col -->
+          <div class="footer-col second">
+            <h6>Links</h6>
+            <ul class="list-unstyled li-space-lg p-small">
+              <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
+              <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
+              <li>Menu: <a class="page-scroll" href="#header">Home</a>, <a class="page-scroll" href="#projects">Projects</a>, <a class="page-scroll" href="#services">Services</a>, <a class="page-scroll" href="#contact">Contact</a></li>
+            </ul>
+          </div> <!-- end of footer-col -->
+          <div class="footer-col third">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <p class="p-small">We would love to hear from you <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
+          </div> <!-- end of footer-col -->
+        </div> <!-- end of col -->
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+  </div> <!-- end of footer -->
+  <!-- end of footer -->
+
+
+  <!-- Copyright -->
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
+        </div>
+
+        <div class="col-lg-12">
+          <p class="p-small">Distributed by :<a href="https://themewagon.com/">Themewagon</a></p>
+        </div> <<!-- end of col -->
+      </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+  </div> <!-- end of copyright -->
+
+  <button onclick="topFunction()" id="myBtn">
+    <img src="../../../../assets/bootstrap/images/up-arrow.png" alt="alternative">
+  </button>
+
+</section>
+
+<!--</body>-->
+<!--</html>-->

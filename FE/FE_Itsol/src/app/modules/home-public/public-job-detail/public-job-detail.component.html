@@ -1,0 +1,195 @@
+<section>
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+    <div class="container" style="position:relative">
+
+      <!-- Image Logo -->
+      <a class="navbar-brand logo-image" href="../../../../public/itsol_recruitment/"><img style="width:60px" src="../../../../assets/images/itsol.png" alt="alternative"></a>
+
+      <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div style="margin-left:936px" class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ms-auto navbar-nav-scroll">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/public/itsol_recruitment">Trang chủ</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/public/aboutus">Liên hệ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth">Đăng nhập</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup">Đăng ký</a>
+          </li>
+        </ul>
+
+      </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+  </nav> <!-- end of navbar -->
+  <!-- end of navigation -->
+
+  <!--  CONTENT-->
+  <div id="services" class="cards-1 bg-gray">
+    <div class="container">
+
+      <h1 style="text-align: center" class="text-uppercase"> {{job.name}}</h1>
+      <div style="display: block; margin: auto; margin-top: 30px">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Tên công việc:</p>
+            <p class="col-md-7"> {{job.name}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Vị trí công việc:</p>
+            <p class="col-md-7"> {{job.jobPosition.description}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Hình thức làm việc:</p>
+            <p class="col-md-7"> {{job.workingForm.description}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Mức lương:</p>
+            <p class="col-md-7"> {{job.salaryMin}} - {{job.salaryMax}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Địa chỉ làm việc:</p>
+            <p class="col-md-7"> {{job.addressWork}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Mô tả công việc:</p>
+            <p class="col-md-7"> {{job.description}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Số năm kinh nghiệm:</p>
+            <p class="col-md-7"> {{job.numberExperience}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Số lượng cần tuyển:</p>
+            <p class="col-md-7"> {{job.qtyPerson}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Trình độ học vấn:</p>
+            <p class="col-md-7"> {{job.academicLevel.description}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Level:</p>
+            <p class="col-md-7"> {{job.rank.description}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Hạn nộp hồ sơ:</p>
+            <p class="col-md-7"> {{job.dueDate}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Người liên hệ:</p>
+            <p class="col-md-7"> {{job.contact.name}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Quyền lợi được hưởng:</p>
+            <p class="col-md-7"> {{job.interest}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <p class="col-md-5 font-weight-bold font-weight-bold"> Yêu cầu công việc:</p>
+            <p class="col-md-7"> {{job.jobRequirement}}</p>
+          </li>
+
+          <li class="list-group-item row">
+            <button style="margin-top: 20px;" type="button" class="btn btn-primary btn-lg btn-block">Ứng tuyển ngay</button>
+
+          </li>
+        </ul>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="footer-col first">
+            <h6>About Elma</h6>
+            <p class="p-small">He oppose at thrown desire of no. Announcing impression unaffected day his are unreserved indulgence. Him hard find read are you</p>
+          </div> <!-- end of footer-col -->
+          <div class="footer-col second">
+            <h6>Links</h6>
+            <ul class="list-unstyled li-space-lg p-small">
+              <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
+              <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
+              <li>Menu: <a class="page-scroll" href="#header">Home</a>, <a class="page-scroll" href="#projects">Projects</a>, <a class="page-scroll" href="#services">Services</a>, <a class="page-scroll" href="#contact">Contact</a></li>
+            </ul>
+          </div> <!-- end of footer-col -->
+          <div class="footer-col third">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <p class="p-small">We would love to hear from you <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
+          </div> <!-- end of footer-col -->
+        </div> <!-- end of col -->
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+  </div> <!-- end of footer -->
+  <!-- end of footer -->
+
+
+  <!-- Copyright -->
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
+        </div>
+
+        <div class="col-lg-12">
+          <p class="p-small">Distributed by :<a href="https://themewagon.com/">Themewagon</a></p>
+        </div> <<!-- end of col -->
+      </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+  </div> <!-- end of copyright -->
+
+  <button onclick="topFunction()" id="myBtn">
+    <img src="../../../../assets/bootstrap/images/up-arrow.png" alt="alternative">
+  </button>
+
+</section>
+

@@ -1,0 +1,115 @@
+<h1 xmlns="http://www.w3.org/1999/html">Thông tin cá nhân</h1>
+<p-card>
+    <form [formGroup]="formProfile"  >
+      <div class="row">
+        <img src="assets/images/alan.png" alt="Avatar"
+             style="width:200px; border-radius: 50%;  margin: 0 auto; margin-bottom: 20px;">
+      </div>
+<!--      <input type="hidden" pInputText class="form-control" formControlName="id">-->
+<!--      <div class="container">-->
+<!--        <img  [src]="dbImage" alt="Avatar"-->
+<!--              style="width:200px; border-radius: 50%;  margin: 0 auto; margin-bottom: 20px;margin-left: 40%;">-->
+<!--        <input type="file"  accept="image/*" class="mt-5 custom-file-input" style="color: black;" id="importFile" (change)="selectImage($event.target.files)">-->
+<!--        <label  #labelImport for="importFile" style="color: black;"><i class="fas fa-image"></i> Choose file</label>-->
+<!--        <input type="hidden" name="fileHidden" formControlName="avatarName"/>-->
+<!--      </div>-->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <div class="row">
+                    <label class="label col-3 col-form-label ">Họ và Tên</label>
+                    <div class="col-9">
+                        <input type="text" pInputText class="form-control" formControlName="fullName">
+                      <div *ngIf="formProfile.controls.fullName.invalid && formProfile.controls.fullName.touched ">
+                        <div *ngIf="formProfile.controls.fullName.errors.required">
+                          <small style="color: red;">không được để Họ và Tên</small>
+                        </div>
+                        <div>
+                          <span style="color: red;" class="error" *ngIf="formProfile.controls.fullName.errors?.minlength && formProfile.controls.fullName.touched">Họ và Tên từ 5 đến 20 kí tự</span>
+                        </div>
+                        <div>
+                          <span style="color: red;" class="error" *ngIf="formProfile.controls.fullName.errors?.maxlength && formProfile.controls.fullName.touched">Họ và Tên từ 5 đến 20 kí tự</span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="row">
+                    <label class="label col-3 col-form-label">Email</label>
+                    <div class="col-9">
+                        <input type="text" pInputText class="form-control" formControlName="email">
+                      <div *ngIf="formProfile.controls.email.invalid && formProfile.controls.email.touched ">
+                        <div *ngIf="formProfile.controls.email.errors.required">
+                          <small style="color: red;">không được để trống email</small>
+                        </div>
+                        <div>
+                          <span style="color: red;" class="error" *ngIf="formProfile.controls.email.errors?.email && formProfile.controls.email.touched">Sai định dạng email</span>
+                        </div>
+
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row" style="margin-bottom: 20px;">
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="label col-3 col-form-label">Số điện thoại</label>
+                    <div class="col-9">
+                        <input type="text" pInputText class="form-control" formControlName="phoneNumber">
+                      <div *ngIf="formProfile.controls.phoneNumber.invalid && formProfile.controls.phoneNumber.touched ">
+                        <div *ngIf="formProfile.controls.phoneNumber.errors.required">
+                          <small style="color: red;">không được để trống số điện thoại</small>
+                        </div>
+                        <div>
+                          <span style="color: red;" class="error" *ngIf="formProfile.controls.phoneNumber.errors?.pattern && formProfile.controls.phoneNumber.touched">Định dạng số điện thoại không hợp lệ</span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="label col-3 col-form-label">Ngày sinh</label>
+                    <div class="field col-9 md:col-4">
+                      <p-calendar style="witdh: 100px" [(ngModel)]="birthday" [touchUI]="true" [maxDate]="currentDate" [placeholder]="birthday" [showIcon]="true" inputId="time" formControlName="birthDay"></p-calendar>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="label col-3 col-form-label">Quê quán</label>
+                    <div class="col-9">
+                        <input type="text" pInputText class="form-control" formControlName="homeTown">
+                      <div *ngIf="formProfile.controls.homeTown.errors && formProfile.controls.homeTown.touched ">
+                        <small style="color: red;">không được để trống quê quán</small>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label class="label col-sm-3 col-form-label">Giới tính</label>
+                    <div class="col-sm-9">
+                      <select formControlName="gender" class="select form-control" (change)="changeGender($event)">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                      </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+          <button [disabled]="formProfile.invalid" (click)="updateUser()" id="button" type="button" class="btn btn-primary (click)=">Update</button>
+        </div>
+
+    </form>
+
+</p-card>

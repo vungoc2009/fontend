@@ -1,0 +1,88 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <div class="row justify-content-center"><h1> Đăng ký tài khoản</h1></div>
+        <form [formGroup]="FormRegis">
+
+          <!-- Full Name input -->
+          <div class="p-float-label mb-4">
+            <input id="p-inputtext-lg3" class="custom-input" formControlName="fullname" type="text"
+                   pInputText>
+            <label for="p-inputtext-lg3">Họ và tên</label>
+            <span class="error" *ngIf="FormRegis.controls.fullname.errors?.required && FormRegis.get('fullname').touched">Không được bỏ trống tên </span>
+            <span class="error" *ngIf="FormRegis.controls.fullname.errors?.minlength && FormRegis.controls.fullname.touched">Mật khẩu phải từ 5-20 kí tự</span>
+            <span class="error" *ngIf="FormRegis.controls.fullname.errors?.maxlength && FormRegis.controls.fullname.touched">Mật khẩu phải từ 5-20 kí tự</span>
+          </div>
+
+          <!-- Email input -->
+          <div class="p-float-label custom-input mb-4">
+            <input id="p-inputtext-lg" required email class="custom-input" formControlName="email" type="email"
+                   pInputText />
+            <label for="p-inputtext-lg">Email</label>
+            <span class="error" *ngIf="error === 400">Email đã tồn tại</span>
+            <span class="error" *ngIf="FormRegis.controls.email.errors?.email && FormRegis.get('email').touched">Email không hợp lệ</span>
+            <span class="error" *ngIf="FormRegis.controls.email.errors?.required && FormRegis.get('email').touched">Không được bỏ trống email</span>
+          </div>
+
+          <div class="p-float-label custom-input mb-4">
+            <input id="p-inputtext-lg0" class="custom-input" formControlName="phonenum" type="phone"
+                   pInputText />
+            <label for="p-inputtext-lg0">Số điện thoại</label>
+            <span class="error" *ngIf="error === 401">Số điện thoại đã tồn tại</span>
+            <span class="error"  *ngIf="FormRegis.controls.phonenum.errors?.required && FormRegis.controls.phonenum.touched">Không được bỏ trống số điện thoại</span>
+            <span class="error"  *ngIf="FormRegis.controls.phonenum.errors?.pattern && FormRegis.controls.phonenum.touched">Định dạng số điện thoại không hợp lệ</span>
+          </div>
+
+
+          <div class="p-float-label custom-input mb-4">
+            <input id="p-inputtext-lg1" class="custom-input" formControlName="username" type="text"
+                   pInputText />
+            <label for="p-inputtext-lg1">User name</label>
+            <span class="error" *ngIf="FormRegis.controls.username.errors?.required && FormRegis.controls.username.touched">Không được bỏ trống tên</span>
+            <span class="error" *ngIf="error === 402">Tên người dùng đã tồn tại</span>
+          </div>
+
+          <div class="p-float-label custom-input mb-4">
+            <input id="p-inputtext-lg5" class="custom-input" formControlName="password" type="password"
+                   pInputText />
+            <label for="p-inputtext-lg5">Mật khẩu</label>
+            <span class="error" *ngIf="FormRegis.controls.password.errors?.required && FormRegis.controls.password.touched">Không được để trống mật khẩu</span>
+            <span class="error" *ngIf="FormRegis.controls.password.errors?.pattern && FormRegis.controls.password.touched">Mật khẩu phải chứa cả chữ, số và ký tự đặc biệt <br> </span>
+            <span class="error" *ngIf="FormRegis.controls.password.errors?.minlength && FormRegis.controls.password.touched">Mật khẩu phải từ 8-16 kí tự</span>
+            <span class="error" *ngIf="FormRegis.controls.password.errors?.maxlength && FormRegis.controls.password.touched">Mật khẩu phải từ 8-16 kí tự</span></div>
+
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button [disabled]="FormRegis.invalid" pButton type="button" label="Đăng Ký" (click)="onSubmit()"><div  *ngIf="isSubmitted && error ===null" class="spinner-border spinner-border-sm"  role="status">
+            </div></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Mockup 1 - Java32 - ITSOL
+    </div>
+    <!-- Copyright -->
+
+    <!-- Right -->
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="pi pi-facebook"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="pi pi-twitter"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="pi pi-linkedin"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </div>
+</section>

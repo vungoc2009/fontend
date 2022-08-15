@@ -1,0 +1,98 @@
+
+<h2 style="text-align: center" class="text-uppercase">Chi tiết công việc</h2>
+
+<div class = "row" style="margin: 0px">
+
+  <button class="btn btn-primary group-btn col" (click)="openDialog(job.id)">Cập nhập</button>
+  <button *ngIf="job.status.id === 3 || job.status.id === 4" (click)="onPreview(job.id)"
+          class="btn btn-info group-btn col">Xem trước</button>
+  <button *ngIf="role==='ROLE_ADMIN' && job.status.id === 1" (click)="onApprove()"
+          class="btn btn-success group-btn col">Xét duyệt</button>
+  <button *ngIf="role==='ROLE_ADMIN' && job.status.id === 1" (click)="onRefuse()"
+          class="btn btn-secondary group-btn col">Từ chối duyệt</button>
+  <button *ngIf="job.status.id === 4" (click)="onPublish()"
+          class="btn btn-success group-btn col">Đăng tuyển</button>
+  <button *ngIf="job.status.id === 3" (click)="onStopHiring()"
+          class="btn btn-dark group-btn col">Dừng tuyển</button>
+  <button *ngIf="job.status.id === 3 || job.status.id === 6" (click)="onClose()"
+          class="btn btn-warning group-btn col">Đóng</button>
+  <button *ngIf="role==='ROLE_ADMIN' && (job.status.id === 2 || job.status.id === 5)" (click)="onDelete()"
+          class="btn btn-danger group-btn col">Xóa</button>
+</div>
+
+<div style="display: block; margin: auto; margin-top: 30px">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Tên công việc:</p>
+      <p class="col-md-7"> {{job.name}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Vị trí công việc:</p>
+      <p class="col-md-7"> {{job.jobPosition.description}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Hình thức làm việc:</p>
+      <p class="col-md-7"> {{job.workingForm.description}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Mức lương:</p>
+      <p class="col-md-7"> {{job.salaryMin}} - {{job.salaryMax}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Địa chỉ làm việc:</p>
+      <p class="col-md-7"> {{job.addressWork}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Mô tả công việc:</p>
+      <p class="col-md-7"> {{job.description}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Số năm kinh nghiệm:</p>
+      <p class="col-md-7"> {{job.numberExperience}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Số lượng cần tuyển:</p>
+      <p class="col-md-7"> {{job.qtyPerson}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Trình độ học vấn:</p>
+      <p class="col-md-7"> {{job.academicLevel.description}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Level:</p>
+      <p class="col-md-7"> {{job.rank.description}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Hạn nộp hồ sơ:</p>
+      <p class="col-md-7"> {{job.dueDate}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Người liên hệ:</p>
+      <p class="col-md-7"> {{job.contact.name}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Quyền lợi được hưởng:</p>
+      <p class="col-md-7"> {{job.interest}}</p>
+    </li>
+
+    <li class="list-group-item row">
+      <p class="col-md-5 font-weight-bold font-weight-bold"> Yêu cầu công việc:</p>
+      <p class="col-md-7"> {{job.jobRequirement}}</p>
+    </li>
+
+  </ul>
+</div>
+
+

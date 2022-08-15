@@ -1,0 +1,83 @@
+<h1 style="text-align: center"> DANH SÁCH TIN TUYỂN DỤNG </h1>
+
+<div style="float:left; width: 30%" class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-primary" type="button" (click)="searchJob(searchText)">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </div>
+  <input type="text" class="form-control" name = "search" [(ngModel)]="searchText" (ngModelChange)="searchJob(searchText)"
+         placeholder="Tìm kiếm theo tên, vị trí, trạng thái">
+</div>
+<div style="float:right">
+  <button type="button" class="btn btn-primary mb-3"
+          (click)="gotoInsertJob()">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+    Tạo công việc mới
+  </button>
+</div>
+
+
+<table class = "table table-hover table-bordered table-light">
+  <thead class = "table-primary">
+
+  <tr>
+    <th> Tên <i class="fa fa-sort" (click)="sorttable('name')"></i></th>
+    <th> Vị trí công việc <i class="fa fa-sort" (click)="sorttable('jobPosition.code')"></i></th>
+    <!--      <th> Số năm kinh nghiệm</th>-->
+    <!--      <th> Hình thức làm việc</th>-->
+    <!--      <th> Địa chỉ làm việc</th>-->
+    <!--      <th> Trình độ học vấn</th>-->
+    <!--      <th> Level</th>-->
+    <!--      <th> Số lượng cần tuyển</th>-->
+    <th> Hạn nộp hồ sơ <i class="fa fa-sort" (click)="sorttable('dueDate')"></i></th>
+    <!--      <th> Kĩ năng</th>-->
+    <!--      <th> Mô tả công việc</th>-->
+    <!--      <th> Quyền lợi được hưởng</th>-->
+    <!--      <th> Yêu cầu công việc</th>-->
+    <th> Mức lương <i class="fa fa-sort" (click)="sorttable('salaryMin')"></i></th>
+    <!--      <th> Người liên hệ</th>-->
+    <th> Trạng thái <i class="fa fa-sort" (click)="sorttable('status.code')"></i></th>
+    <th> Lượt xem <i class="fa fa-sort" (click)="sorttable('views')"></i></th>
+    <th colspan = "3" >Quick Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let job of jobs" >
+    <td (click)="gotoDetailJob(job.id)" style="cursor: pointer;"> {{job.name}}</td>
+    <td> {{job.jobPosition.description}}</td>
+    <!--      <td> {{job.numberExperience}}</td>-->
+    <!--      <td> {{job.workingForm.description}}</td>-->
+    <!--      <td> {{job.addressWork}}</td>-->
+    <!--      <td> {{job.academicLevel.description}}</td>-->
+    <!--      <td> {{job.rank.description}}</td>-->
+    <!--      <td> {{job.qtyPerson}}</td>-->
+    <td> {{job.dueDate}}</td>
+    <!--      <td> {{job.skills}}</td>-->
+    <!--      <td> {{job.description}}</td>-->
+    <!--      <td> {{job.interest}}</td>-->
+    <!--      <td> {{job.jobRequirement}}</td>-->
+    <td> {{job.salaryMax}} - {{job.salaryMin}} VNĐ</td>
+    <!--      <td> {{job.contact.name}}</td>-->
+    <td> {{job.status.description}}</td>
+    <td> {{job.views}}</td>
+
+    <td class = "td-btn">
+      <button class="btn btn-sm btn-info" (click)="gotoPreviewJob(job.id)" >
+        <i class="fa fa-search"></i>Xem trước</button>
+      <button class="btn btn-sm btn-warning" (click)="gotoExportPDFJob(job.id)">
+        <i class="fa fa-download" ></i>Export JD</button>
+      <button class="btn btn-sm btn-success" (click)="onPublish(job.id)" [disabled]="(job.status.id === 4)?false:true">
+        <i class="fa fa-paper-plane"></i>Đăng tuyển</button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+
+<mat-paginator [length]='100' [pageIndex]="pageNo" [pageSize]="pageSize" (page)="onChangePage($event)"
+               [pageSizeOptions]="pageSizeOption" aria-label="Chọn trang" showFirstLastButtons="firstLastButtons">
+</mat-paginator>
+
+

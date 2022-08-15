@@ -1,0 +1,10 @@
+<br>
+<div *ngIf="error != 404">
+  <p> Bằng việc active tài khoản. Bạn có thể dễ dàng đăng nhập và gửi CV ứng tuyển cho chúng tôi.</p>
+  <p> Click vào <button0 type="button" class="btn btn-link" *ngIf="error === null" (click)="active()">
+    ACTIVE</button0> để tiến hành kích hoạt tài khoản  </p>
+
+
+</div>
+<p *ngIf="error === 404"> Không tìm thấy trang</p>
+

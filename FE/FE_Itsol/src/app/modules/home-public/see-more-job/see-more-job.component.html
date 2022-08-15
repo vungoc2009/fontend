@@ -1,0 +1,201 @@
+<section xmlns="http://www.w3.org/1999/html">
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+    <div class="container" style="position:relative">
+
+
+      <a class="navbar-brand logo-image" href="../../../../index.html"><img style="width:60px" src="../../../../assets/images/itsol.png" alt="alternative"></a>
+
+      <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div style="margin-left:936px" class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ms-auto navbar-nav-scroll">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/public/itsol_recruitment">Trang chủ</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/public/aboutus">Liên hệ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth">Đăng nhập</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup">Đăng ký</a>
+          </li>
+        </ul>
+
+      </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+  </nav> <!-- end of navbar -->
+  <!-- end of navigation -->
+
+
+
+
+
+  <div id="services" class="cards-1 bg-gray">
+    <div class="container">
+
+
+      <div class="row"></div>
+      <div class="row" ></div>
+      <br>
+
+      <div class="row" *ngIf="typeJob === 'newJob'"><h1> Việc mới ứng tuyển</h1></div>
+      <div class="row" *ngIf="typeJob === 'urgentJob'"><h1> Việc cần tuyển gấp</h1></div>
+      <div class="row" *ngIf="typeJob === 'highPJob'"><h1> Việc làm lương cao</h1></div>
+      <div class="row">
+
+        <div class="col-4" *ngFor="let job of jobs; let i = index">
+          <!-- Card -->
+          <div class="card first" *ngIf="i%3 === 0">
+
+              <hr>
+
+                <div>
+                  <a style="font-size:20px" href = "#"> {{job.name}} </a>
+                  <p style="font-size:15px">Hạn ứng tuyển: {{job.dueDate|date:'dd-MM-yyyy'}} </p>
+                  <span ><a style="color:red" href="/public/searchJob">{{job.addressWork}}</a> | </span>
+
+                  <span style="color:gray"> upto {{job.salaryMax }} </span></div>
+
+              <hr>
+
+          </div>
+          <!-- end of card -->
+
+          <!-- Card -->
+          <div class="card second" *ngIf="i%3 === 1">
+
+            <hr>
+
+              <div>
+                <a style="font-size:20px" href = "#"> {{job.name}} </a>
+                <p style="font-size:15px">Hạn ứng tuyển: {{job.dueDate|date:'dd-MM-yyyy'}} </p>
+                <span ><a style="color:red" href="/public/searchJob">{{job.addressWork}}</a> | </span>
+
+                <span style="color:gray"> upto {{job.salaryMax }} </span></div>
+
+            <hr>
+          </div>
+          <!-- end of card -->
+
+          <!-- Card -->
+          <div class="card third" *ngIf="i%3 === 2">
+
+            <hr>
+
+              <div>
+                <a style="font-size:20px" href = "#"> {{job.name}} </a>
+                <p style="font-size:15px">Hạn ứng tuyển: {{job.dueDate|date:'dd-MM-yyyy'}} </p>
+                <span ><a style="color:red" href="/public/searchJob">{{job.addressWork}}</a> | </span>
+
+                <span style="color:gray"> upto {{job.salaryMax }} </span></div>
+
+            <hr>
+          </div>
+        </div> <!-- end of col -->
+        <div class="col-lg-12">
+
+          <ul  class="pagination">
+
+            <li class="page-item active" *ngFor="let p of pages " >
+
+              <button id ="btn" class="page-link" (click)="setPage(p)" >{{p}}</button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-12">
+
+<!--          <ul  class="pagination">-->
+
+<!--            <li class="page-item active" *ngFor="let p of this.pages; let i = index " >-->
+
+<!--              <a href="public/searchJob" class="page-link" (click)="setpage(i+1)">{{i+1}}</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+        </div>
+
+
+      </div> <!-- end of row -->
+      <!--      <div class="row"  *ngIf="error ===404">-->
+      <!--        Khoong tim thay</div>-->
+    </div> <!-- end of container -->
+  </div> <!-- end of cards-1 -->
+
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="footer-col first">
+            <h6>About Elma</h6>
+            <p class="p-small">He oppose at thrown desire of no. Announcing impression unaffected day his are unreserved indulgence. Him hard find read are you</p>
+          </div> <!-- end of footer-col -->
+          <div class="footer-col second">
+            <h6>Links</h6>
+            <ul class="list-unstyled li-space-lg p-small">
+              <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
+              <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
+              <li>Menu: <a class="page-scroll" href="#header">Home</a>, <a class="page-scroll" href="#projects">Projects</a>, <a class="page-scroll" href="#services">Services</a>, <a class="page-scroll" href="#contact">Contact</a></li>
+            </ul>
+          </div> <!-- end of footer-col -->
+          <div class="footer-col third">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+            <p class="p-small">We would love to hear from you <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
+          </div> <!-- end of footer-col -->
+        </div> <!-- end of col -->
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+  </div> <!-- end of footer -->
+  <!-- end of footer -->
+
+
+  <!-- Copyright -->
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
+        </div>
+
+        <div class="col-lg-12">
+          <p class="p-small">Distributed by :<a href="https://themewagon.com/">Themewagon</a></p>
+        </div> <<!-- end of col -->
+      </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+  </div> <!-- end of copyright -->
+
+  <button onclick="topFunction()" id="myBtn">
+    <img src="../../../../assets/bootstrap/images/up-arrow.png" alt="alternative">
+  </button>
+
+</section>
+

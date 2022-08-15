@@ -1,0 +1,54 @@
+<h1>Thông tin cá nhân</h1>
+<p-card>
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <div class="row">
+          <label class="label col-3 col-form-label ">Ngày hẹn phỏng vấn</label>
+          <div class="col-9">
+            <input type="date" pInputText class="form-control" formControlName="fullName">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <div class="row">
+          <label class="label col-3 col-form-label">Giờ hẹn phỏng vấn</label>
+          <div class="col-9">
+            <input type="text" pInputText class="form-control" formControlName="email">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="form-row" style="margin-bottom: 20px;">
+      <div class="col-md-6">
+        <div class="row">
+          <label class="label col-3 col-form-label">Hình thức phỏng vấn</label>
+          <select class="form-control" id="working form" style="
+    position: relative;
+    margin-right: 16px;
+    margin-left: 164px;
+    margin-top: -40px;">
+            <option *ngFor=" let selection of selection" value="selection">
+              {{selection}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf="check">
+        <div class="row">
+          <label class="label col-3 col-form-label"> Công cụ phỏng vấn</label>
+          <div class="col-9">
+            <input type="text" pInputText class="form-control" formControlName="birthDay">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div>
+      <button id="button" type="button" class="btn btn-primary">Lưu</button>
+    </div>
+  </form>
+
+
+</p-card>

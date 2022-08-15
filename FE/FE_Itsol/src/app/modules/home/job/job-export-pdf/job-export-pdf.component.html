@@ -1,0 +1,89 @@
+<div class="row">
+  <div id="htmlData" #htmlData class = "col-md-10">
+    <h1 style="text-align: center" class="text-uppercase font-weight-bold"> Chi tiết công việc {{job.name}}</h1>
+
+    <div style="display: block; width: 70%; margin: auto">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Tên công việc:</p>
+          <p class="col-md-9"> {{job.name}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Vị trí công việc:</p>
+          <p class="col-md-9"> {{job.jobPosition.description}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Hình thức làm việc:</p>
+          <p class="col-md-9"> {{job.workingForm.description}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Mức lương:</p>
+          <p class="col-md-9"> {{job.salaryMin}} - {{job.salaryMax}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Địa chỉ làm việc:</p>
+          <p class="col-md-9"> {{job.addressWork}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Mô tả công việc:</p>
+          <p class="col-md-9"> {{job.description}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Số năm kinh nghiệm:</p>
+          <p class="col-md-9"> {{job.numberExperience}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Số lượng cần tuyển:</p>
+          <p class="col-md-9"> {{job.qtyPerson}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Trình độ học vấn:</p>
+          <p class="col-md-9"> {{job.academicLevel.description}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Level:</p>
+          <p class="col-md-9"> {{job.rank.description}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Hạn nộp hồ sơ:</p>
+          <p class="col-md-9"> {{job.dueDate}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Người liên hệ:</p>
+          <p class="col-md-4"> {{job.contact.name}}</p>
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Số điện thoại:</p>
+          <p class="col-md-2"> {{job.contact.phoneNumber}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Quyền lợi được hưởng:</p>
+          <p class="col-md-9"> {{job.interest}}</p>
+        </li>
+
+        <li class="list-group-item row">
+          <p class="col-md-3 font-weight-bold font-weight-bold"> Yêu cầu công việc:</p>
+          <p class="col-md-9"> {{job.jobRequirement}}</p>
+        </li>
+
+      </ul>
+    </div>
+
+
+  </div>
+
+  <div class="col-md-2" style="margin:auto">
+    <button class ="btn btn-primary" (click)="openPDF('JD - ' + job.name)">Export To PDF</button>
+  </div>
+
+</div>

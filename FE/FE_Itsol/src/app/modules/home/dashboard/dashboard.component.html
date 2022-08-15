@@ -1,0 +1,38 @@
+<div class="choose-day d-flex flex-row" style="margin-left: 25%;">
+  <div>
+    <span>Từ ngày</span>
+    <input type="Date" id='smalldate'>
+  </div>
+  <div class="ml-2">
+    <span>Đến ngày</span>
+    <input type="Date" id='bigDate'>
+  </div>
+
+  <!-- <div *ngIf=" new Date(smalldate) > new Date(bigDate)">
+      <small class="text-danger">*không thể chọn ngày bé hơn</small>
+  </div> -->
+</div>
+
+<div class="mt-4">
+  <div class="d-flex flex-row">
+    <div style="width: 25%;  border:1px solid red;" class="ml-1">Tổng số việc đã đăng: </div>
+    <div style="width: 25%;  border:1px solid red;" class="ml-1">Tổng số hồ sơ chờ phỏng vấn: </div>
+    <div style="width: 25%;  border:1px solid red;" class="ml-1">Tổng số hồ sơ đang phỏng vấn: </div>
+    <div style="width: 25%; border:1px solid red;" class="ml-1">Tổng số việc gần hết hạn: </div>
+  </div>
+
+  <div class="d-flex flex-row mt-3">
+    <div style="width: 25%;  border:1px solid red;" class="ml-1">Tổng số lượt xem: </div>
+    <div style="width: 25%;  border:1px solid red;" class="ml-1">Tổng số ứng viên ứng tuyển: </div>
+    <div style="width: 25%;  border:1px solid red;" class="ml-1">Tổng số ứng viên thành công: </div>
+    <div style="width: 25%;  border:1px solid red;" class="ml-1">Tổng số ứng viên bị từ chối: </div>
+  </div>
+</div>
+
+<div class="fix-content">
+
+  <div>
+    <canvas #lineCanvas style="height:100px; width:100px"></canvas>
+  </div>
+  <canvas id="myPieChart" width="500px" height="350px"></canvas>
+</div>

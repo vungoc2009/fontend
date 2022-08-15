@@ -1,0 +1,73 @@
+<form [formGroup]="formUserJe">
+  <div class="d-flex flex-row">
+    <div class="form-group">
+      <label for="formGroupExampleInput">User Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" formControlName="userName">
+      <div *ngIf="formUserJe.controls.userName.invalid && formUserJe.controls.userName.touched ">
+        <div *ngIf="formUserJe.controls.userName.errors.required">
+          <small style="color: red;">không được để User Name</small>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="formUserJe.controls.userName.errors?.minlength && formUserJe.controls.userName.touched">User Name từ 5 đến 20 kí tự</span>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="formUserJe.controls.userName.errors?.maxlength && formUserJe.controls.userName.touched">User Name từ 5 đến 20 kí tự</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group"  style="margin-left: 10%;">
+      <label for="formGroupExampleInput2">Email</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="email">
+      <div *ngIf="formUserJe.controls.email.invalid && formUserJe.controls.email.touched ">
+        <div *ngIf="formUserJe.controls.email.errors.required">
+          <small style="color: red;">không được để trống email</small>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="formUserJe.controls.email.errors?.email && formUserJe.controls.email.touched">Sai định dạng email</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-row">
+    <div class="form-group">
+      <label for="formGroupExampleInput2">phoneNumber</label>
+      <input type="text" class="form-control" id="formGroupExampleInput3" formControlName="phoneNumber">
+      <div *ngIf="formUserJe.controls.phoneNumber.invalid && formUserJe.controls.phoneNumber.touched ">
+        <div *ngIf="formUserJe.controls.phoneNumber.errors.required">
+          <small style="color: red;">không được để trống số điện thoại</small>
+        </div>
+        <div>
+          <span style="color: red;" class="error" *ngIf="formUserJe.controls.phoneNumber.errors?.pattern && formUserJe.controls.phoneNumber.touched">Định dạng số điện thoại không hợp lệ</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" style="margin-left: 10%;">
+      <label for="formGroupExampleInput2">homeTown</label>
+      <input type="text" class="form-control" id="formGroupExampleInput4" formControlName="homeTown">
+      <div *ngIf="formUserJe.controls.homeTown.errors && formUserJe.controls.homeTown.touched ">
+        <small style="color: red;">không được để trống quê quán</small>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-row">
+    <div class="form-group" style="width: 72%">
+      <label for="formGroupExampleInput2">gender</label>
+
+        <select formControlName="gender" class="select form-control" (change)="changeGender($event)">
+          <option value="Nam">Nam</option>
+          <option value="Nữ">Nữ</option>
+        </select>
+
+    </div>
+    <div class="form-group" style="margin-left: 10%;">
+      <label for="formGroupExampleInput2">birthDay</label>
+      <p-calendar [(ngModel)]="birthDay" [maxDate]="currentDate" [placeholder]="birthDay" [showIcon]="true" inputId="time" formControlName="birthDay"></p-calendar>
+    </div>
+  </div>
+  <div>
+    <button [disabled]="formUserJe.invalid" style="margin-left: 26%;" (click)="updateUser()" type="button" class="btn btn-primary">Update</button>
+    <button style="margin-left: 10%;" (click)="close()" type="button" class="btn btn-danger">Đóng</button>
+  </div>
+
+</form>
+
